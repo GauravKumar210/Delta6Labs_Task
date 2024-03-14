@@ -1,0 +1,19 @@
+.single-card{
+    background: 2px solid black;
+    background-color:rgb(167, 163, 163);
+    margin: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 120px;
+    width: 200px;
+    border-radius: .7rem;
+    padding: 3px;
+    margin: 5px;
+    box-shadow: 2px 2px black;
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
