@@ -27,13 +27,13 @@
 
 .fl-table thead th {
     color: #ffffff;
-    background: #4d769e;
+    background: #b8d4f0;
 }
 
 
 .fl-table thead th:nth-child(odd) {
     color: #ffffff;
-    background: #324960;
+    background: #638ab1;
 }
 
 .fl-table tr:nth-child(even) {
@@ -82,7 +82,7 @@
     }
     .fl-table thead th {
         text-align: left;
-        border-bottom: 1px solid #f7f7f9;
+        border-bottom: 1px solid #e4e4fb;
     }
     .fl-table tbody tr {
         display: table-cell;

@@ -10,12 +10,12 @@ import Subscription from './components/Subscription';
 function App() {
   return (
     <div className='parent-container'>
-    {/* <LanguageSelector/> */}
-    {/* <CoinSelector/> */}
-    {/* <CoinCard/> */}
-    {/* <Banner/> */}
-    {/* <Subscription/> */}
+    <LanguageSelector/>
+    <CoinSelector/>
+    <CoinCard/>
+    <Banner/>
     <CoinList/>
+    <Subscription/>
     </div>
   );
 }
