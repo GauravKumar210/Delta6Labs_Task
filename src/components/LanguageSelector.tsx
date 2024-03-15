@@ -7,12 +7,12 @@ import {
     MenuItem,
     Button,
     Flex,
-    Center
+    useBreakpointValue,
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import { RiGlobalLine } from "react-icons/ri";
 
-interface language {
+interface LanguageData {
     lang: string,
     slug: string,
     default: boolean,
@@ -20,15 +20,14 @@ interface language {
 }
 
 const LanguageSelector: React.FC = () => {
-    const [languages, setLanguages] = useState<language[]>([]);
+    const [languages, setLanguages] = useState<LanguageData[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
-
 
     useEffect(() => {
         const fetchLanguage = async () => {
             try {
-                const response = await axios.get<{ data: language[] }>('https://api.bitdelta.com/api/v1/public/lang');
+                const response = await axios.get<{ data: LanguageData[] }>('https://api-staging.bitdelta.com/api/v1/public/lang');
                 setLanguages(response.data.data)
                 setLoading(false);
             } catch (error) {
@@ -43,6 +42,9 @@ const LanguageSelector: React.FC = () => {
         setSelectedLanguage(slug);
     };
 
+    // Use Chakra UI's useBreakpointValue hook to dynamically adjust width based on screen size
+    const buttonWidth = useBreakpointValue({ base: '100%', sm: 'auto' });
+
     return (
         <>
             <div style={{ margin: 10}}>
@@ -53,14 +55,14 @@ const LanguageSelector: React.FC = () => {
                         transition='all 0.2s'
                         borderRadius='md'
                         borderWidth='1px'
-                        backgroundColor='gray.400'
+                        backgroundColor='white'
                         _hover={{ bg: 'gray.300' }}
-                        _expanded={{ bg: 'blue.400' }}
+                        _expanded={{ bg: 'gray.400' }}
                         _focus={{ boxShadow: 'outline' }}
-                        width="15%"
+                        width={buttonWidth}
                     >
-                        <Flex flexDirection={"row"} justifyContent={"space-between"}>
-                            {selectedLanguage===null?(<RiGlobalLine/>):(true)}{selectedLanguage ? languages.find(lang => lang.slug === selectedLanguage)?.lang : 'Language Selector'} <ChevronDownIcon />
+                        <Flex flexDirection={"row"} justifyContent={"space-between"} alignItems="center">
+                            {selectedLanguage === null ? (<RiGlobalLine />) : (true)}{selectedLanguage ? languages.find(lang => lang.slug === selectedLanguage)?.lang : 'Language Selector'} <ChevronDownIcon />
                         </Flex>
 
                     </MenuButton>

@@ -1,19 +1,52 @@
-.single-card{
-    background: 2px solid black;
-    background-color:rgb(167, 163, 163);
-    margin: 2px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 120px;
-    width: 200px;
-    border-radius: .7rem;
-    padding: 3px;
+/* CoinCard.css */
+
+.single-card {
+    background-color: white;
     margin: 5px;
-    box-shadow: 2px 2px black;
-}
-.card{
     display: flex;
     flex-direction: row;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    row-gap: 0.2rem;
+    padding: 0.6rem;
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
+    padding: 10px;
+}
+
+.coin-name {
+    font-weight: 700;
+    font-size: 1.2rem; 
+    width: 70%;
+}
+
+.coin-price {
+    font-weight: 900;
+    font-size: 1.5rem; 
+}
+
+@media screen and (min-width: 768px) {
+    .single-card {
+        width: 40%; /* 40% width for tablets and larger screens */
+        max-width: 300px; /* Maximum width for larger screens */
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .single-card {
+        width: 80%; /* 80% width for smaller screens */
+        max-width: 300px; /* Maximum width for smaller screens */
+    }
+}
+.chart{
+    padding: 15px;
+    height: 120px;
+    width: 50%;
+}
+.content{
+    width: 50%;
 }
