@@ -50,3 +50,7 @@
 .content{
     width: 50%;
 }
+.coin-content{
+    display: 'flex';
+    flex-direction: row;
+}

@@ -47,7 +47,7 @@ const CoinCard: React.FC = () => {
                     {coin.slice(0, 4).map((coinItem) => (
                         <div key={coinItem.order} className='single-card'>
                             <div className='content'>
-                                <div style={{ display: 'flex', flexDirection: 'row' }}>
+                                <div className='coin-content'>
                                     <h1 className='coin-name'>{coinItem.keywords}</h1>
                                     <p>{coinItem.currency1}</p>
                                 </div>

@@ -47,6 +47,7 @@ const LanguageSelector: React.FC = () => {
 
     return (
         <>
+        {/* Using The component from Chakra UI */}
             <div style={{ margin: 10}}>
                 <Menu >
                     <MenuButton as={Button}
@@ -60,6 +61,7 @@ const LanguageSelector: React.FC = () => {
                         _expanded={{ bg: 'gray.400' }}
                         _focus={{ boxShadow: 'outline' }}
                         width={buttonWidth}
+                        minW={"20%"}
                     >
                         <Flex flexDirection={"row"} justifyContent={"space-between"} alignItems="center">
                             {selectedLanguage === null ? (<RiGlobalLine />) : (true)}{selectedLanguage ? languages.find(lang => lang.slug === selectedLanguage)?.lang : 'Language Selector'} <ChevronDownIcon />

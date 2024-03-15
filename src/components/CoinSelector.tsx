@@ -44,14 +44,13 @@ const CoinSelector: React.FC = () => {
         setSelectedCurrencySymbol(sym);
     };
 
-    // Dynamically adjust width of menu button based on screen size
     const buttonWidth = useBreakpointValue({ base: '100%', sm: 'auto' });
-    
-    // Dynamically adjust height of menu list based on screen size
+
     const menuListHeight = useBreakpointValue({ base: 'auto', sm: '200px' });
 
     return (
         <>
+        {/* Using The component from Chakra UI */}
             <div style={{ margin: 10 }}>
                 <Menu>
                     <MenuButton
@@ -65,6 +64,7 @@ const CoinSelector: React.FC = () => {
                         _expanded={{ bg: 'gray.400' }}
                         _focus={{ boxShadow: 'outline' }}
                         width={buttonWidth}
+                        minW={"20%"}
                     >
                         <Flex flexDirection={"row"} justifyContent={"space-between"}>
                             <span>{selectedCurrency === null ? (<GrCurrency />) : (selectedCurrencySymbol)}</span>
